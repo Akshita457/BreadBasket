@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BreadBasket | Our Impact</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fffdf8;
+            color: #24372d;
+        }
+
+
+        .navbar {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            background: #ffffff;
+            border-bottom: 1px solid #eee7dc;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #2f7041;
+        }
+
+        .logo span {
+            margin-right: 8px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #35483e;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #2f7041;
+        }
+
+        .login-btn {
+            font-weight: bold;
+            color: #216235 !important;
+        }
+
+        .signup-btn {
+            background: #2f7041;
+            color: white !important;
+            padding: 14px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px 60px;
+            background: linear-gradient(
+                to bottom,
+                #fff8ec,
+                #fffdf8
+            );
+        }
+
+        .tag {
+            color: #d86b20;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #2f7041;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #617069;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        .stats {
+            width: 84%;
+            margin: 30px auto 90px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #eee7dc;
+            border-radius: 18px;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(50, 70, 55, 0.06);
+        }
+
+        .stat-icon {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .stat-card h2 {
+            font-size: 38px;
+            color: #2f7041;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            color: #6b766f;
+            font-size: 15px;
+        }
+
+
+        .story {
+            width: 84%;
+            margin: 0 auto 90px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .story-text h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .story-text h2 span {
+            color: #2f7041;
+        }
+
+        .story-text p {
+            color: #65716b;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .impact-box {
+            background: #edf5ec;
+            border-radius: 25px;
+            padding: 45px;
+        }
+
+        .impact-box h3 {
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .progress-item {
+            margin-bottom: 22px;
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .progress {
+            height: 9px;
+            background: #d8e5d8;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #2f7041;
+            border-radius: 20px;
+        }
+
+
+        .section {
+            text-align: center;
+            padding: 80px 8%;
+            background: #fff8ec;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section > p {
+            color: #65716b;
+            margin-bottom: 45px;
+        }
+
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: left;
+            border: 1px solid #eee7dc;
+        }
+
+        .impact-card .icon {
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .impact-card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .impact-card p {
+            color: #69756e;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+
+        .cta {
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #68736d;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        .cta a {
+            display: inline-block;
+            text-decoration: none;
+            background: #2f7041;
+            color: white;
+            padding: 16px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+
+        footer {
+            background: #24372d;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            color: #cbd5ce;
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 900px) {
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links a:not(.login):not(.get-started) {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .story,
+            .stats {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>🥖</span> BreadBasket
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="how-it-works.html">
+                How It Works
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="impact.html">
+                Our Impact
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+        <div class="nav-buttons">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="signup-btn">Get Started</a>
+        </div>
+
+    </header>
+
+
+
+    <section class="hero">
+
+        <div class="tag">
+            OUR IMPACT
+        </div>
+
+        <h1>
+            Every Meal <span>Matters.</span>
+        </h1>
+
+        <p>
+            Together, we are turning surplus food into meaningful meals,
+            reducing food waste and helping communities in need.
+        </p>
+
+    </section>
+
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🍱</div>
+
+            <h2>12,450+</h2>
+
+            <p>
+                Meals Rescued
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">⚖️</div>
+
+            <h2>8,200+</h2>
+
+            <p>
+                Kg of Food Saved
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🏠</div>
+
+            <h2>120+</h2>
+
+            <p>
+                NGOs Supported
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🚴</div>
+
+            <h2>3,200+</h2>
+
+            <p>
+                Successful Deliveries
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="story">
+
+        <div class="story-text">
+
+            <h2>
+                From <span>Surplus</span> to Service
+            </h2>
+
+            <p>
+                Every day, perfectly edible food is thrown away by
+                restaurants, hotels, bakeries and households.
+            </p>
+
+            <p>
+                BreadBasket gives that food a second chance by connecting
+                people who have surplus food with NGOs and communities
+                that need it.
+            </p>
+
+            <p>
+                What might have been waste can become someone's next meal.
+            </p>
+
+        </div>
+
+
+        <div class="impact-box">
+
+            <h3>
+                Our Progress
+            </h3>
+
+            <div class="progress-item">
+
+                <div class="progress-top">
+                    <span>Food Rescued</span>
+                    <span>82%</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width:82%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="progress-item">
+
+                <div class="progress-top">
+                    <span>Community Reach</span>
+                    <span>68%</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width:68%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="progress-item">
+
+                <div class="progress-top">
+                    <span>Successful Deliveries</span>
+                    <span>91%</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width:91%"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= IMPACT AREAS ================= -->
+
+    <section class="section">
+
+        <h2>
+            Making a Difference Together
+        </h2>
+
+        <p>
+            Every donation creates an impact beyond a single meal.
+        </p>
+
+
+        <div class="impact-cards">
+
+            <div class="impact-card">
+
+                <div class="icon">🌱</div>
+
+                <h3>
+                    Less Food Waste
+                </h3>
+
+                <p>
+                    Edible surplus food is redirected to people instead
+                    of ending up in landfills.
+                </p>
+
+            </div>
+
+
+            <div class="impact-card">
+
+                <div class="icon">❤️</div>
+
+                <h3>
+                    Helping Communities
+                </h3>
+
+                <p>
+                    NGOs and shelters receive food that can support
+                    people and families in need.
+                </p>
+
+            </div>
+
+
+            <div class="impact-card">
+
+                <div class="icon">🤝</div>
+
+                <h3>
+                    Stronger Connections
+                </h3>
+
+                <p>
+                    Donors, NGOs and volunteers work together to build
+                    a more responsible food ecosystem.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>
+            Be Part of the Impact
+        </h2>
+
+        <p>
+            One donation can become someone's meal.
+            Start making a difference today.
+        </p>
+
+        <a href="register.html">
+            Get Started →
+        </a>
+
+    </section>
+
+
+
+    <footer>
+
+        <p>
+            © 2026 BreadBasket. Share Food. Spread Hope.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+
