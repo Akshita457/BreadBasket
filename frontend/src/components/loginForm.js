@@ -1,21 +1,23 @@
-<!DOCTYPE html>
+function LoginDashboard() {
+  return (
+    
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>Login | BreadBasket</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 
 <body>
 
 
-    <header class="navbar">
+    <header className="navbar">
 
-        <div class="logo">
+        <div className="logo">
             <span>🥖</span> BreadBasket
         </div>
 
@@ -26,27 +28,27 @@
             <a href="index.html#contact">Contact</a>
         </nav>
 
-        <div class="nav-buttons">
-            <a href="login.html" class="login-btn">Login</a>
-            <a href="register.html" class="signup-btn">Get Started</a>
+        <div className="nav-buttons">
+            <a href="login.html" className="login-btn">Login</a>
+            <a href="register.html" className="signup-btn">Get Started</a>
         </div>
 
     </header>
 
 
 
-    <main class="auth-section">
+    <main className="auth-section">
 
-        <div class="auth-container">
+        <div className="auth-container">
 
 
-            <div class="auth-header">
+            <div className="auth-header">
 
-                <div class="auth-icon">
+                <div className="auth-icon">
                     🥖
                 </div>
 
-                <p class="section-label">WELCOME BACK</p>
+                <p className="section-label">WELCOME BACK</p>
 
                 <h1>Login to BreadBasket</h1>
 
@@ -62,7 +64,7 @@
             <form id="loginForm">
 
 
-                <div class="form-group">
+                <div className="form-group">
 
                     <label for="role">Login As</label>
 
@@ -93,7 +95,7 @@
 
 
 
-                <div class="form-group">
+                <div className="form-group">
 
                     <label for="email">
                         Email Address
@@ -104,12 +106,12 @@
                         id="email"
                         name="email"
                         placeholder="Enter your email"
-                    >
+                    />
 
                 </div>
 
 
-                <div class="form-group">
+                <div className="form-group">
 
                     <label for="password">
                         Password
@@ -120,23 +122,23 @@
                         id="password"
                         name="password"
                         placeholder="Enter your password"
-                    >
+                    />
 
                 </div>
 
 
 
-                <div class="form-options">
+                <div className="form-options">
 
-                    <label class="remember-me">
+                    <label className="remember-me">
 
-                        <input type="checkbox">
+                        <input type="checkbox"/>
 
                         Remember me
 
                     </label>
 
-                    <a href="#" class="forgot-password">
+                    <a href="#" className="forgot-password">
                         Forgot Password?
                     </a>
 
@@ -146,21 +148,21 @@
 
                 <button
                     type="submit"
-                    class="auth-btn"
+                    className="auth-btn"
                 >
                     Login
                 </button>
 
                 <p
                     id="loginMessage"
-                    class="form-message"
+                    className="form-message"
                 ></p>
 
             </form>
 
 
 
-            <div class="auth-footer">
+            <div className="auth-footer">
 
                 <p>
 
@@ -181,7 +183,7 @@
 
     <footer>
 
-        <div class="copyright">
+        <div className="copyright">
 
             <p>
                 © 2026 BreadBasket. Share Food. Spread Hope.
@@ -198,3 +200,6 @@
 </body>
 
 </html>
+  )
+}
+export default LoginDashboard;
