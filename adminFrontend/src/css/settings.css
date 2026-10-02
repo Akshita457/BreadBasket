@@ -1,0 +1,173 @@
+.settings-card {
+    margin-top: 25px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.settings-card h2 {
+    margin: 0;
+    color: #333;
+}
+
+.settings-description {
+    margin: 7px 0 25px;
+    color: #888;
+    font-size: 14px;
+}
+
+.settings-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.settings-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+.settings-input-group input {
+    padding: 11px 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.settings-input-group input:focus {
+    outline: none;
+    border-color: #2f6b3c;
+}
+
+.settings-save-btn {
+    margin-top: 22px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #2f6b3c;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.settings-save-btn:hover {
+    background: #24552f;
+}
+
+
+/* Notification Settings */
+
+.settings-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.setting-option:last-child {
+    border-bottom: none;
+}
+
+.setting-option strong {
+    color: #444;
+    font-size: 14px;
+}
+
+.setting-option p {
+    margin: 5px 0 0;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* Toggle */
+
+.toggle {
+    position: relative;
+    width: 46px;
+    height: 24px;
+    display: inline-block;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle span {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.toggle span::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.toggle input:checked + span {
+    background: #2f6b3c;
+}
+
+.toggle input:checked + span::before {
+    transform: translateX(22px);
+}
+
+
+/* Security */
+
+.settings-security {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-security strong {
+    color: #444;
+}
+
+.settings-security p {
+    margin: 5px 0 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.change-password-btn {
+    padding: 9px 16px;
+    border: 1px solid #2f6b3c;
+    border-radius: 7px;
+    background: white;
+    color: #2f6b3c;
+    cursor: pointer;
+}
+
+.change-password-btn:hover {
+    background: #2f6b3c;
+    color: white;
+}

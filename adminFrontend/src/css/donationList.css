@@ -1,0 +1,128 @@
+.donation-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.donation-summary-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.donation-summary-card span {
+    color: #777;
+    font-size: 14px;
+}
+
+.donation-summary-card strong {
+    display: block;
+    margin-top: 10px;
+    color: #2f6b3c;
+    font-size: 28px;
+}
+
+.donations-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.donations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.donations-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.donation-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.donation-filters select {
+    padding: 9px 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    background: white;
+    cursor: pointer;
+}
+
+.donations-table-container {
+    overflow-x: auto;
+}
+
+.donations-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.donations-table th,
+.donations-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+}
+
+.donations-table th {
+    background: #fafafa;
+    color: #666;
+    font-size: 13px;
+}
+
+.donations-table td {
+    color: #444;
+    font-size: 13px;
+}
+
+.donation-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.donation-status.available {
+    background: #e7f4e9;
+    color: #2f6b3c;
+}
+
+.donation-status.pending {
+    background: #fff4d6;
+    color: #a87900;
+}
+
+.donation-status.collected {
+    background: #e9f0ff;
+    color: #4169a1;
+}
+
+.donation-status.delivered {
+    background: #eee8ff;
+    color: #6741a1;
+}
+
+.view-donation-btn {
+    padding: 7px 13px;
+    border: 1px solid #2f6b3c;
+    border-radius: 6px;
+    background: white;
+    color: #2f6b3c;
+    cursor: pointer;
+}
+
+.view-donation-btn:hover {
+    background: #2f6b3c;
+    color: white;
+}
