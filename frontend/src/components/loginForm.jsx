@@ -169,11 +169,6 @@ function LoginDashboard({ onSuccess, onShowRegister }) {
         </div>
       </main>
 
-      <footer>
-        <div className="copyright">
-          <p>© 2026 BreadBasket. Share Food. Spread Hope.</p>
-        </div>
-      </footer>
     </>
   );
 }

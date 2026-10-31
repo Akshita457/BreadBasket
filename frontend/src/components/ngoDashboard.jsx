@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from "react";
+import ProfileMenu from "./profileMenu.jsx";
 
-function NgoDashboard() {
+function NgoDashboard({ user, onLogout }) {
   const [section, setSection] = useState("dashboard");
   const [available, setAvailable] = useState([]);
   const [myRequests, setMyRequests] = useState([]);
@@ -299,16 +300,7 @@ function NgoDashboard() {
           </button>
         </nav>
 
-        <button
-          className="donor-logout"
-          onClick={() => {
-            sessionStorage.removeItem("token");
-            sessionStorage.removeItem("user");
-            window.location.reload();
-          }}
-        >
-          ↪ Logout
-        </button>
+
       </aside>
 
       {/* Main Dashboard */}
@@ -322,7 +314,7 @@ function NgoDashboard() {
             </p>
           </div>
 
-          <div className="donor-profile">N</div>
+          <ProfileMenu user={user} onLogout={onLogout} />
         </div>
 
         {/* Statistics */}

@@ -21,11 +21,17 @@ function createToken(user) {
 // Register a new user
 router.post("/register", async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, phone, role } = req.body;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !phone) {
       return res.status(400).json({
-        message: "Name, email and password are required"
+        message: "Name, email, phone and password are required"
+      });
+    }
+
+    if (typeof phone !== "string" || !/^\d{10}$/.test(phone)) {
+      return res.status(400).json({
+        message: "Phone number must contain exactly 10 digits"
       });
     }
 
@@ -77,6 +83,7 @@ router.post("/register", async (req, res) => {
     const user = await User.create({
       name: name.trim(),
       email: normalizedEmail,
+      phone,
       password: hashedPassword,
       role: role || "donor"
     });
@@ -90,6 +97,7 @@ router.post("/register", async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
+        phone: user.phone,
         role: user.role
       }
     });
@@ -141,6 +149,7 @@ router.post("/login", async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
+        phone: user.phone,
         role: user.role
       }
     });
@@ -169,6 +178,7 @@ router.get("/me", protect, async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
+        phone: user.phone,
         role: user.role
       }
     });

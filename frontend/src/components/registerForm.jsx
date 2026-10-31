@@ -18,10 +18,16 @@ function RegisterDashboard({ onSuccess, onShowLogin }) {
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
 
-    setForm({
-      ...form,
+    if (name === "phone") {
+      const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
+      setForm((current) => ({ ...current, phone: digitsOnly }));
+      return;
+    }
+
+    setForm((current) => ({
+      ...current,
       [name]: type === "checkbox" ? checked : value
-    });
+    }));
   }
 
   async function handleSubmit(event) {
@@ -30,6 +36,11 @@ function RegisterDashboard({ onSuccess, onShowLogin }) {
 
     if (!form.role) {
       setMessage("Please select your role.");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(form.phone)) {
+      setMessage("Phone number must contain exactly 10 digits.");
       return;
     }
 
@@ -62,6 +73,7 @@ function RegisterDashboard({ onSuccess, onShowLogin }) {
             name: form.name,
             email: form.email,
             password: form.password,
+            phone: form.phone,
             role: form.role
           })
         }
@@ -152,9 +164,14 @@ function RegisterDashboard({ onSuccess, onShowLogin }) {
                 id="phone"
                 name="phone"
                 type="tel"
+                inputMode="numeric"
+                pattern="[0-9]{10}"
+                minLength={10}
+                maxLength={10}
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="Enter your phone number"
+                placeholder="10-digit phone number"
+                required
               />
             </div>
 

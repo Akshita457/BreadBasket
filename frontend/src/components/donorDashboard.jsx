@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from "react";
+import ProfileMenu from "./profileMenu.jsx";
 
-function DonorDashboard({ onDonate }) {
+function DonorDashboard({ onDonate, user, onLogout }) {
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -98,16 +99,7 @@ function DonorDashboard({ onDonate }) {
           </button>
         </nav>
 
-        <button
-          className="donor-logout"
-          onClick={() => {
-            sessionStorage.removeItem("token");
-            sessionStorage.removeItem("user");
-            window.location.reload();
-          }}
-        >
-          ↪ Logout
-        </button>
+
       </aside>
 
       {/* Main Dashboard */}
@@ -123,7 +115,7 @@ function DonorDashboard({ onDonate }) {
             </p>
           </div>
 
-          <div className="donor-profile">D</div>
+          <ProfileMenu user={user} onLogout={onLogout} />
         </div>
 
         {/* Statistics */}

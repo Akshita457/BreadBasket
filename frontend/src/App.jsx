@@ -53,10 +53,10 @@ function App() {
 
   if (user?.role === "donor") {
     dashboard = (
-      <DonorDashboard onDonate={() => setPage("donate")} />
+      <DonorDashboard onDonate={() => setPage("donate")} user={user} onLogout={handleLogout} />
     );
   } else if (user?.role === "ngo") {
-    dashboard = <NgoDashboard />;
+    dashboard = <NgoDashboard user={user} onLogout={handleLogout} />;
   } else if (user?.role === "volunteer") {
     dashboard = <VolunteerDashboard />;
   } else {
@@ -66,18 +66,7 @@ function App() {
     />;
   }
 
-  return (
-    <>
-      <div style={{ padding: "10px", textAlign: "right" }}>
-        <span style={{ marginRight: "12px" }}>
-          Logged in as {user.name} ({user.role})
-        </span>
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-
-      {dashboard}
-    </>
-  );
+  return dashboard;
 }
 
 export default App;
